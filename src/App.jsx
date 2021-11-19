@@ -4,11 +4,13 @@ import AppNavBar from "./components/AppNavBar";
 
 import "./index.css";
 import TimeLinePost from "./components/TimeLinePost";
+import PrimarySearchAppBar from "./components/PrimarySearchAppBar";
 
 const App = () => {
   return (
     <div>
-      <AppNavBar />
+      {/* <AppNavBar /> */}
+      <PrimarySearchAppBar />
       <Container maxWidth="md">
         <TimeLinePost />
       </Container>
