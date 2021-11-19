@@ -109,7 +109,6 @@ const TimeLinePost = () => {
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
               <CardContent>
-                <Typography paragraph>Method:</Typography>
                 <Typography paragraph>{item.title}</Typography>
 
                 <Typography paragraph>

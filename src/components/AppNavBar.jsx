@@ -72,7 +72,7 @@ const AppNavBar = () => {
               component="div"
               sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
             >
-              Social Media App
+              ACC News App
             </Typography>
             <Search>
               <SearchIconWrapper>
