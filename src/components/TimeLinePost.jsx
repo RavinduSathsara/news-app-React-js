@@ -14,6 +14,8 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import LoadingBar from "./LoadingBar";
+import { AlertTitle, Alert } from "@mui/material";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -26,7 +28,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-const TimeLinePost = () => {
+const TimeLinePost = (props) => {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -58,14 +60,25 @@ const TimeLinePost = () => {
   }, []);
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return (
+      <div>
+        <Alert sx={{ m: 6 }} severity="warning">
+          <AlertTitle>Warning</AlertTitle>
+          {error.message} — <strong>check it out!</strong>
+        </Alert>
+      </div>
+    );
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <LoadingBar />
+      </div>
+    );
   } else {
     return (
       <ul>
         {items.map((item) => (
-          <Card sx={{ maxWidth: 345 }} sx={{ m: 4 }} key={item.userId}>
+          <Card sx={{ maxWidth: `100%` }} sx={{ m: 4 }} key={item.userId}>
             <CardHeader
               avatar={
                 <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -122,7 +135,6 @@ const TimeLinePost = () => {
               </CardContent>
             </Collapse>
           </Card>
-          //   <li key={item.id}>{item.title}</li>
         ))}
       </ul>
     );
