@@ -1,4 +1,6 @@
 import * as React from "react";
+import axios from "axios";
+
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -26,7 +28,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard() {
+export default function Post() {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {

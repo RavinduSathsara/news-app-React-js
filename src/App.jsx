@@ -1,18 +1,18 @@
 import React from "react";
 import { Container } from "@mui/material";
 import AppNavBar from "./components/AppNavBar";
-import RecipeReviewCard from "./components/RecipeReviewCard";
+import Post from "./components/Post";
 
 import "./index.css";
+import TimeLinePost from "./components/TimeLinePost";
 
 const App = () => {
   return (
     <div>
       <AppNavBar />
       <Container maxWidth="md">
-        <RecipeReviewCard />
-        <RecipeReviewCard />
-        <RecipeReviewCard />
+        {/* <Post /> */}
+        <TimeLinePost />
       </Container>
     </div>
   );
